@@ -1,0 +1,15 @@
+---
+type: component
+layout: "lyt-docs"
+hideTemplates: true,
+hideOutput: true,
+displayName: "c-overlay"
+scssFiles:
+- _c-overlay.scss
+jsFiles:
+  - overlay.js
+---
+
+<a class="c-cta--overlay" data-css="c-cta" title="Trigger overlay" data-js-module="cta" data-js-options='{
+	"globalEvent": "overlay:open", "data": "<img src=\"http://placehold.it/600x350\" />"
+	}'><span class="cta__content">Trigger overlay</span></a>
