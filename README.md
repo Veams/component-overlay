@@ -14,9 +14,7 @@ It should be used by other modules to display their content in an overlay.
 -----------
 
 ## Requirements
-
-### JavaScript
-`Veams-JS >= v4.0.0` - Basic JavaScript library.
+- `Veams >= v5.0.0` - Veams Framework.
 
 -----------
 
