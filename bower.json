@@ -1,6 +1,6 @@
 {
-	"name": "veams-block-overlay",
-	"version": "2.1.0",
+	"name": "veams-component-overlay",
+	"version": "3.0.0",
 	"ignore": [
 		".bowerrc",
 		".gitignore",
@@ -14,6 +14,6 @@
 	],
 	"repository": {
 	  "type": "git",
-	  "url": "git://github.com/Veams/veams-block-overlay.git"
+	  "url": "git://github.com/Veams/veams-component-overlay.git"
 	}
 }
