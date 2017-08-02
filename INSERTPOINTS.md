@@ -6,7 +6,7 @@
 // @INSERT :: END //
 
 // @INSERT :: START @tag: scss-self-contained-import //
-@import "../templating/partials/components/overlay/scss/_c-overlay";
+@import "../components/overlay/scss/_c-overlay";
 // @INSERT :: END //
 ```
 
@@ -14,12 +14,8 @@
 
 #### Import
 ``` js
-// @INSERT :: START @tag: js-import //
-import Overlay from './modules/overlay/overlay';
-// @INSERT :: END //
-
 / @INSERT :: START @tag: js-self-contained-import //
-import Overlay from '../templating/partials/components/overlay/js/overlay';
+import Overlay from '../components/overlay/js/overlay';
 // @INSERT :: END //
 ```
 

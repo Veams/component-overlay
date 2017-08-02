@@ -8,7 +8,7 @@
  * to display their content in an overlay.
  *
  * @module Overlay
- * @version v3.0.0
+ * @version v4.0.0
  *
  * @author Sebastian Fitzner
  */
@@ -48,7 +48,7 @@ class Overlay extends VeamsComponent {
 	 */
 	static get info() {
 		return {
-			version: '3.0.0',
+			version: '4.0.0',
 			vc: true,
 			mod: false // set to true if source was modified in project
 		};
