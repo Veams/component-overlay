@@ -1,10 +1,6 @@
 ### Include: SCSS
 
 ``` scss
-// @INSERT :: START @tag: scss-import //
-@import "blocks/_c-overlay";
-// @INSERT :: END //
-
 // @INSERT :: START @tag: scss-self-contained-import //
 @import "../components/overlay/scss/_c-overlay";
 // @INSERT :: END //
