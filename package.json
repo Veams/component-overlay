@@ -1,0 +1,22 @@
+{
+	"name": "veams-component-overlay",
+	"version": "4.0.0",
+	"description": "It represents an overlay module. This module is responsible to create an overlay without predefining any inner overlay template. It should be used by other modules to display their content in an overlay.",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/Veams/veams-component-overlay.git"
+	},
+	"keywords": [
+		"veams"
+	],
+	"author": "Sebastian Fitzner",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/Veams/veams-component-overlay/issues"
+	},
+	"homepage": "https://github.com/Veams/veams-component-overlay#readme"
+}
