@@ -1,0 +1,13 @@
+{
+	"type": "component",
+	"displayName": "c-overlay",
+	"layout": "lyt-docs",
+	"hideTemplates": true,
+	"hideOutput": true,
+	"scssFiles": [
+		"_c-overlay.scss"
+	],
+	"jsFiles": [
+		"overlay.js"
+	]
+}

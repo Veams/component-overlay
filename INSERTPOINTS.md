@@ -1,21 +1,8 @@
-### Include: SCSS
-
-``` scss
-// @INSERT :: START @tag: scss-self-contained-import //
-@import "../components/overlay/scss/_c-overlay";
-// @INSERT :: END //
-```
+## Usage
 
 ### Include: JavaScript
 
-#### Import
-``` js
-/ @INSERT :: START @tag: js-self-contained-import //
-import Overlay from '../components/overlay/js/overlay';
-// @INSERT :: END //
-```
-
-#### Initializing
+#### Initializing in Veams V5
 ``` js
 // @INSERT :: START @tag: js-init-once-v5 //
 /**
