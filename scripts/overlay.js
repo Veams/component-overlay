@@ -8,12 +8,12 @@
  * to display their content in an overlay.
  *
  * @module Overlay
- * @version v5.0.0
+ * @version v5.1.0
  *
  * @author Sebastian Fitzner
  */
-import {Veams} from 'app';
-import VeamsComponent from 'veams/src/js/common/component';
+import { Veams } from 'app.veams';
+import VeamsComponent from 'veams/lib/common/component';
 const $ = Veams.$;
 let Template = Veams.templater.templates;
 
@@ -48,7 +48,7 @@ class Overlay extends VeamsComponent {
 	 */
 	static get info() {
 		return {
-			version: '5.0.0',
+			version: '5.1.0',
 			vc: true,
 			mod: false // set to true if source was modified in project
 		};
