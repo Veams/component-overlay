@@ -5,13 +5,14 @@
 #### Initializing in Veams
 
 ``` js
-// @INSERT :: START @tag: js-init-once-@1 //
+// @INSERT :: START @tag: js-init-once //
 /**
  * Init Overlay
  */
 const overlay = new Overlay({
 	context: Veams
 });
+
 overlay.create(); 
 // @INSERT :: END //
 ```
