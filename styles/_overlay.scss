@@ -10,14 +10,13 @@ Global Variables
 $overlay-duration: 300ms !default;
 $overlay-ease-method: ease !default;
 
-$overlay-color-bg: #000;
-$overlay-color-btn-close: #fff;
+$overlay-color-bg: #000 !default;
+$overlay-color-btn-close: #fff !default;
 
 /* ---------------------------------------------------
 Global Styles
 --------------------------------------------------- */
 [data-css="c-overlay"] {
-
 	/*
 	Standard styles
 	----------------------- */
@@ -64,6 +63,7 @@ Global Styles
 		top: 20px;
 		width: 20px;
 		z-index: 9997;
+		cursor: pointer;
 
 		&::after {
 			@include pseudo;
@@ -89,7 +89,7 @@ Global Styles
 
 		max-height: 100%;
 		width: auto;
-		margin: 0 auto 0 auto;
+		margin: 0 auto;
 		vertical-align: top;
 	}
 
@@ -105,4 +105,11 @@ Global Styles
 		z-index: 9998;
 		width: 100%;
 	}
+}
+
+/* ---------------------------------------------------
+Context: Default
+--------------------------------------------------- */
+.c-cta--overlay {
+	cursor: pointer;
 }

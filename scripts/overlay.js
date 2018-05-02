@@ -8,16 +8,34 @@
  * to display their content in an overlay.
  *
  * @module Overlay
- * @version v5.1.0
+ * @version v1.0.0
  *
  * @author Sebastian Fitzner
  */
-import { Veams } from 'app.veams';
-import VeamsComponent from 'veams/lib/common/component';
-const $ = Veams.$;
-let Template = Veams.templater.templates;
+import $ from '@veams/query';
+import Component from '@veams/component';
 
-class Overlay extends VeamsComponent {
+const Template = `
+<div class="c-overlay--default" data-css="c-overlay" data-js-item="overlay">
+	<div class="overlay__wrapper">
+		<button class="overlay__close" data-js-item="overlay-close"></button>
+		<div class="overlay__content">
+			<div class="overlay__inner" data-js-item="overlay-content">
+			</div>
+		</div>
+	</div>
+	<div class="overlay__mask" data-js-item="overlay-mask"></div>
+</div>`;
+
+class Overlay extends Component {
+	/**
+	 * General Properties
+	 */
+
+	// Elements in Markup
+	$body = $('body');
+	_template = Template;
+
 	/**
 	 * Constructor for our class
 	 *
@@ -32,8 +50,7 @@ class Overlay extends VeamsComponent {
 			openClass: 'is-open',
 			closeBtn: '[data-js-item="overlay-close"]',
 			overlay: '[data-js-item="overlay"]',
-			regionContent: '[data-js-item="overlay-content"]',
-			template: Template['OVERLAY']
+			regionContent: '[data-js-item="overlay-content"]'
 		};
 
 		super(obj, options);
@@ -48,7 +65,7 @@ class Overlay extends VeamsComponent {
 	 */
 	static get info() {
 		return {
-			version: '5.1.0',
+			version: '1.0.0',
 			vc: true,
 			mod: false // set to true if source was modified in project
 		};
@@ -111,10 +128,9 @@ class Overlay extends VeamsComponent {
 	/** =================================================
 	 * EVENTS
 	 * ================================================ */
-
 	get subscribe() {
 		return {
-			'{{Veams.EVENTS.overlay.open}}': 'render'
+			'{{this.context.EVENTS.overlay.open}}': 'render'
 		};
 	}
 
@@ -125,7 +141,7 @@ class Overlay extends VeamsComponent {
 	 */
 	bindEvents() {
 		// Close overlay with ESC
-		$(window).on(Veams.EVENTS.keyup, (e) => {
+		$(window).on(this.context.EVENTS.keyup, (e) => {
 			if (e.keyCode == 27 && this.isOpen) {
 				this.close();
 			}
@@ -139,29 +155,18 @@ class Overlay extends VeamsComponent {
 		let fnClose = this.close.bind(this);
 
 		// Local events
-		this.$closeBtn.on(Veams.EVENTS.click, fnClose);
+		this.$closeBtn.on(this.context.EVENTS.click, fnClose);
 	}
 
 	/** =================================================
 	 * STANDARD METHODS
 	 * ================================================= */
-
-	/**
-	 * Initialize the view and merge options
-	 *
-	 */
-	initialize() {
-		this.$body = $('body');
-		this.template = this.options.template;
-
-	}
-
 	/**
 	 * Pre-Render the overlay and save references
 	 */
 	preRender() {
 		// Append FE template
-		this.$body.append(this.template());
+		this.$body.append(this.template);
 
 		// Set some references
 		this.$overlay = $(this.options.overlay);
@@ -176,16 +181,16 @@ class Overlay extends VeamsComponent {
 	 * Render the overlay
 	 */
 	render(obj) {
-		let data = obj.data || (obj.options && obj.options.data);
+		let content = obj.content || (obj.options && obj.options.content);
 
-		// Check if data object is provided
-		if (!data) {
-			console.warn('Overlay: You have to provide an object with data (obj.data || obj.options.data)!');
+		// Check if content object is provided
+		if (!content) {
+			console.warn('Overlay: You have to provide an object with content (obj.content || obj.options.content)!');
 			return;
 		}
 
-		// Append data to overlay region
-		this.$regionContent.html(data);
+		// Append content to overlay region
+		this.$regionContent.html(content);
 
 		// Open overlay
 		this.open();
@@ -194,7 +199,6 @@ class Overlay extends VeamsComponent {
 	/** =================================================
 	 * CUSTOM OVERLAY METHODS
 	 * ================================================= */
-
 	/**
 	 * Open Overlay
 	 */
@@ -213,3 +217,5 @@ class Overlay extends VeamsComponent {
 }
 
 export default Overlay;
+
+

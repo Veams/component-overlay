@@ -1,12 +1,13 @@
 {
 	"type": "component",
+	"displayName": "overlay",
 	"layout": "lyt-docs",
 	"hideTemplates": true,
 	"hideOutput": true,
 	"scssFiles": [
-		"styles/_overlay.scss"
+		"_overlay.scss"
 	],
 	"jsFiles": [
-		"scripts/overlay.js"
+		"overlay.js"
 	]
 }

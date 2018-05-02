@@ -2,15 +2,17 @@
 
 ### Include: JavaScript
 
-#### Initializing in Veams V5
+#### Initializing in Veams
+
 ``` js
-// @INSERT :: START @tag: js-init-once-v5 //
+// @INSERT :: START @tag: js-init-once-@1 //
 /**
  * Init Overlay
  */
-new Overlay({
-    appInstance: Veams
+const overlay = new Overlay({
+	context: Veams
 });
+overlay.create(); 
 // @INSERT :: END //
 ```
 
